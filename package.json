@@ -65,7 +65,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "heroku-prebuild": "npm i -f",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
