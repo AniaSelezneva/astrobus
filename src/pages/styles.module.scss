@@ -16,9 +16,10 @@ $background_color: #4bbbbcff;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   gap: 2.5rem;
   padding: 1rem;
+  max-width: 100vw;
 }
 
 .article {
@@ -109,5 +110,33 @@ $background_color: #4bbbbcff;
     & > :nth-child(2) {
       margin-top: auto;
     }
+  }
+}
+
+
+// ********************* CARDS
+.card {
+  height: 100px;
+  width: 70px;
+  position: absolute;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+
+  .card_face_front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    background: rebeccapurple;
+    border: 2px solid black;
+  }
+
+  .card_face_back{   
+    height: 100%;
+    width: 100%;
+    background: red;
+    //transform: rotateY( 180deg );
+    border: 2px solid black;
   }
 }
