@@ -1,0 +1,114 @@
+@import url(//fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap);
+
+$top_offset: 10rem;
+$background_color: #4bbbbcff;
+$background_img: url(../images/background-stars.svg);
+$header_color: rgb(183, 47, 74);
+
+* {
+  list-style-type: none;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 600;
+}
+
+.container {
+  //background-image: url(../images/back.jpg);
+  background: black;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    color: $header_color;
+    font-size: 130%;
+
+    ul {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      height: 3rem;
+      position: sticky;
+      top: 0px;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  footer {
+    background: $background_color;
+    position: relative;
+    top: -1rem;
+    z-index: 100;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.3rem;
+    padding-top: 5rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: -5rem;
+      background: $background_color;
+      z-index: -50;
+    }
+
+    figure {
+      figcaption {
+        text-align: end;
+      }
+    }
+  }
+}
+
+.main {
+  flex-grow: 1;
+  //background: linear-gradient(transparent 50%, $background_color 50%);
+  display: flex;
+  flex-direction: column;
+
+  .top {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #canvas {
+    position: fixed;
+    width: 100%;
+    background: $background_img;
+
+    .star {
+      width: calc(100vw / 50);
+      height: auto;
+      position: absolute;
+    }
+  }
+
+  .quote {
+    color: white;
+    position: absolute;
+    right: 0.5rem;
+    max-width: 25rem;
+    z-index: 100;
+    padding-left: 0.5rem;
+
+    & > figcaption {
+      text-align: end;
+    }
+  }
+
+  #back {
+    width: 105%;
+    height: 100%;
+    position: relative;
+    left: -1%;
+  }
+}

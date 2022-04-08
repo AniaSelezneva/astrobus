@@ -1,0 +1,46 @@
+$background_img: url(../../images/background-stars.svg);
+
+.container {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2000;
+}
+
+.loading_star {
+  display: flex;
+  position: relative;
+  height: 15rem;
+  width: 15rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 100%;
+    height: 100%;
+    animation: rotate 3s infinite linear;
+    z-index: 100;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../../images/loading_star_back.svg);
+    background-size: cover;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
