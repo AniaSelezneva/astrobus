@@ -2,10 +2,6 @@ import * as React from "react"
 import * as styles from "./styles.module.scss"
 import moment from "moment"
 
-String.prototype.capitalize = function () {
-  return this.charAt(0).toUpperCase() + this.slice(1)
-}
-
 const Week = ({
   pageContext: {
     data: {

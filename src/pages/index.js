@@ -4,9 +4,9 @@ import * as styles from "./styles.module.scss"
 const IndexPage = () => {
   const cardWidth = 70
   let startMargin = 10
-  const endMargin = window.innerWidth - (cardWidth + startMargin)
-  const step = (endMargin - startMargin) / 78
-  console.log(window.innerWidth, endMargin)
+  const [endMargin, setEndMargin] = React.useState()
+  const [step, setStep] = React.useState()
+  const [cards, setCards] = React.useState([])
 
   const addCards = () => {
     const cards = []
@@ -29,7 +29,13 @@ const IndexPage = () => {
     return cards
   }
 
-  return <div className={styles.container}>{addCards()}</div>
+  React.useEffect(() => {
+    setEndMargin(window.innerWidth - (cardWidth + startMargin))
+    setStep((endMargin - startMargin) / 84)
+    setCards(addCards())
+  })
+
+  return <div className={styles.container}>{cards}</div>
 }
 
 export default IndexPage
