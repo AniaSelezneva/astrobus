@@ -46,6 +46,9 @@ const Layout = ({ children }) => {
             <li>
               <Link to="/eightBall">Magic 8-ball</Link>
             </li>
+            <li>
+              <Link to="/tarot">Tarot</Link>
+            </li>
           </ul>
         </nav>
       </header>
