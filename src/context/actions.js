@@ -98,3 +98,16 @@ export const timeZone_loaded_1 = {
 export const timeZone_loaded_2 = {
   type: "timeZone_loaded_2",
 }
+
+export const add_card = {
+  type: "ADD_CARD",
+}
+
+export const add_cards = payload => ({
+  type: "ADD_CARDS",
+  payload,
+})
+
+export const add_cards_flipped = {
+  type: "ADD_FLIPPED_CARD",
+}

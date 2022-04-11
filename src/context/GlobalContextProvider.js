@@ -19,6 +19,9 @@ export const initialState = {
     coordErr: false,
     timeZoneLoading: false,
   },
+  cardCount: 0,
+  chosenCards: [],
+  cardsFlipped: 0,
 }
 
 export const reducer = (state, action) => {
@@ -71,6 +74,12 @@ export const reducer = (state, action) => {
       return { ...state, first: { ...state.first, timeZoneLoading: false } }
     case "timeZone_loaded_2":
       return { ...state, second: { ...state.second, timeZoneLoading: false } }
+    case "ADD_CARD":
+      return { ...state, cardCount: state.cardCount + 1 }
+    case "ADD_CARDS":
+      return { ...state, chosenCards: action.payload }
+    case "ADD_FLIPPED_CARD":
+      return { ...state, cardsFlipped: state.cardsFlipped + 1 }
 
     default:
       throw new Error()

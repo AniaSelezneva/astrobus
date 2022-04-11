@@ -1,9 +1,16 @@
 import * as React from "react"
 import * as styles from "../styles.module.scss"
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../../../context/GlobalContextProvider"
+import { add_card } from "../../../../context/actions.js"
 
-function Card({ startMargin, setAmountChosen }) {
+function Card({ startMargin }) {
   const card = React.useRef()
   const [active, setActive] = React.useState(false)
+  const state = React.useContext(GlobalStateContext)
+  const dispatch = React.useContext(GlobalDispatchContext)
 
   React.useEffect(() => {
     if (active) {
@@ -17,8 +24,10 @@ function Card({ startMargin, setAmountChosen }) {
       className={styles.card}
       style={{ marginLeft: `${startMargin}px` }}
       onClick={() => {
-        setActive(!active)
-        setAmountChosen(prevValue => prevValue + 1)
+        if (state.cardCount < 10) {
+          setActive(true)
+          dispatch(add_card) // count cards (not to have more than 10)
+        }
       }}
       src="/cards/Back.jpg"
     ></img>
