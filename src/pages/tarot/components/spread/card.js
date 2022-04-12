@@ -11,6 +11,7 @@ function Card({ num, fileName }) {
   const cardFront = React.useRef()
   const state = React.useContext(GlobalStateContext)
   const dispatch = React.useContext(GlobalDispatchContext)
+  const [clicked, setClicked] = React.useState(false) // not to be able to cound clicks on the same card
 
   // Show back of the card when it's chosen
   React.useEffect(() => {
@@ -21,7 +22,10 @@ function Card({ num, fileName }) {
 
   const callback = () => {
     if (state.cardCount >= 10) {
-      dispatch(add_cards_flipped)
+      if (!clicked) {
+        dispatch(add_cards_flipped)
+        setClicked(true)
+      }
       // If it's a second card (rotated)
       if (num === 2) {
         card.current.className = `${styles.is_active_second}`

@@ -28,6 +28,7 @@ $header_color: rgb(183, 47, 74);
     ul {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     nav ul li a {

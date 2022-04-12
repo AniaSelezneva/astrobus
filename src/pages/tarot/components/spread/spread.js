@@ -107,6 +107,11 @@ function Spread() {
 
   return (
     <div className={styles.spread_container}>
+      {state.cardCount < 10 ? (
+        <p>Choose {10 - state.cardCount} cards</p>
+      ) : (
+        <div />
+      )}
       <div className={styles.table} ref={table}>
         {cards}
       </div>

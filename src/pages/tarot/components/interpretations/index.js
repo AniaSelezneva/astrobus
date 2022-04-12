@@ -62,10 +62,6 @@ function Interpretations() {
     }
   }, [state.cardsFlipped])
 
-  React.useEffect(() => {
-    console.log(text)
-  }, [text])
-
   return <div className={styles.interpretations_container}>{text}</div>
 }
 

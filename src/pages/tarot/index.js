@@ -9,6 +9,7 @@ const IndexPage = () => {
   return (
     <>
       <AllCards />
+
       <Spread />
       <Interpretations />
     </>

@@ -49,7 +49,6 @@ const AllCards = () => {
   return (
     <>
       <div className={styles.cards_container} ref={container}>
-        {/* <p>Choose {10 - state.cardCount} cards</p> */}
         {cards}
       </div>
     </>
