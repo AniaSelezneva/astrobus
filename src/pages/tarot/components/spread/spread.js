@@ -22,20 +22,20 @@ function Spread() {
   const state = React.useContext(GlobalStateContext)
 
   const addNames = () => {
-    const result = []
+    const resultNames = []
     // Add Major
     for (let i = 0; i < 22; i++) {
-      result.push(`Major${i.toString().padStart(2, "0")}`)
+      names.push(`Major${i.toString().padStart(2, "0")}`)
     }
     // Add Coins, Cups, Swords, Wands
     for (let i = 1; i < 15; i++) {
-      result.push(`Coins${i.toString().padStart(2, "0")}`)
-      result.push(`Cups${i.toString().padStart(2, "0")}`)
-      result.push(`Swords${i.toString().padStart(2, "0")}`)
-      result.push(`Wands${i.toString().padStart(2, "0")}`)
+      names.push(`Coins${i.toString().padStart(2, "0")}`)
+      names.push(`Cups${i.toString().padStart(2, "0")}`)
+      names.push(`Swords${i.toString().padStart(2, "0")}`)
+      names.push(`Wands${i.toString().padStart(2, "0")}`)
     }
 
-    setNames(result)
+    setNames(resultNames)
   }
 
   const chooseRandom = () => {
@@ -124,15 +124,15 @@ function Spread() {
 
       <button
         style={
-          state.cardCount > 9
+          state.cardCount > 0
             ? { visibility: "visible" }
             : { visibility: "hidden" }
         }
         onClick={() => {
           dispatch(remove_spread)
-          addNames()
           chooseRandom()
           setCards(addCards())
+          console.log(names)
         }}
       >
         reset

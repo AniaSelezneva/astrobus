@@ -22,7 +22,7 @@ const IndexPage = () => {
     <>
       <AllCards />
       <Spread />
-      <Interpretations />
+      {state.cardsFlipped >= 10 && <Interpretations />}
     </>
   )
 }

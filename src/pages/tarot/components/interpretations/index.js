@@ -58,7 +58,7 @@ function Interpretations() {
       interpretations: [],
     },
   }
-  const [text, setText] = React.useState()
+  const [markup, setMarkup] = React.useState()
 
   React.useEffect(() => {
     if (state.cardsFlipped >= 10) {
@@ -92,8 +92,14 @@ function Interpretations() {
       Object.keys(result).forEach((key, index) => {
         finalResult.push(
           <Card
+            // props={{
+            //   index,
+            //   meaning: key,
+            //   comment: result[key].comment,
+            //   interpretations: result[key].interpretations,
+            // }}
+            key={index}
             index={index}
-            key={key}
             meaning={key}
             comment={result[key].comment}
             interpretations={result[key].interpretations}
@@ -101,11 +107,15 @@ function Interpretations() {
         )
       })
 
-      setText(finalResult)
+      setMarkup(finalResult)
     }
   }, [state.cardsFlipped])
 
-  return <div className={styles.interpretations_container}>{text}</div>
+  return (
+    <div className={styles.interpretations_container}>
+      {state.cardsFlipped >= 10 ? markup : ""}
+    </div>
+  )
 }
 
 export default Interpretations

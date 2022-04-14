@@ -26,14 +26,13 @@ function Card({ index, meaning: key, comment, interpretations }) {
         src={`/cards/${state.chosenCards[index]}.jpg`}
         alt={`${state.chosenCards[key]}`}
       />
-      <div className={styles.main}>
+      <div>
         <h3 onClick={callback}>
           {key} {"\u23F7"}
         </h3>
         <small ref={commentRef}>{comment}</small>
-        {interpretations.map((value, index) => (
-          <p key={index}> - {value}</p>
-        ))}
+        {interpretations &&
+          interpretations.map((value, index) => <p key={index}> - {value}</p>)}
       </div>
     </div>
   )
