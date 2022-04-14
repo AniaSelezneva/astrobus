@@ -15,10 +15,15 @@ function Card({ num, fileName }) {
 
   // Show back of the card when it's chosen
   React.useEffect(() => {
-    if (num === state.cardCount) {
-      cardFront.current.className = `${styles.card_front_chosen}`
+    if (state.cardCount === 0) {
+      card.current.classList.remove(`${styles.is_active}`)
+      card.current.classList.remove(`${styles.is_active_second}`)
+      card.current.className = `${styles.spread_card}`
 
-      window.getComputedStyle(card.current, ":after").style = "display: none"
+      cardFront.current.classList.remove(`${styles.card_front_chosen}`)
+      cardFront.current.className = `${styles.card_front}`
+    } else if (num === state.cardCount) {
+      cardFront.current.className = `${styles.card_front_chosen}`
     }
   }, [state.cardCount])
 

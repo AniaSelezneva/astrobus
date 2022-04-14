@@ -39,17 +39,23 @@ const AllCards = () => {
 
   React.useEffect(() => {
     if (state.cardCount >= 10) {
+      // cards appear
       container.current.style.animationName = `${styles.cardsDisappear}`
       container.current.style.animationDuration = `1s`
       container.current.style.animationFillMode = `forwards`
       container.current.style.animationDelay = `0.6s`
+      setTimeout(() => {
+        container.current.style.transform = "translateX(-100%)"
+      }, 600)
     } else if (state.cardCount === 0) {
-      //setCards([])
-      addCards()
+      // cards disappear
+      setCards(addCards())
       container.current.style.animationName = `${styles.cardsAppear}`
       container.current.style.animationDuration = `1s`
       container.current.style.animationFillMode = `forwards`
-      //container.current.style.animationDelay = `0.6s`
+      setTimeout(() => {
+        container.current.style.transform = "translateX(0)"
+      }, 600)
     }
   }, [state.cardCount])
 

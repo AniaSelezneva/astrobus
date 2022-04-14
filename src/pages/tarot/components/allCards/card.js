@@ -15,8 +15,17 @@ function Card({ startMargin }) {
   React.useEffect(() => {
     if (active) {
       card.current.className = `${styles.is_chosen}`
+    } else {
+      card.current.classList.remove(`${styles.is_chosen}`)
+      card.current.className = `${styles.card}`
     }
   }, [active])
+
+  React.useEffect(() => {
+    if (state.cardCount === 0) {
+      setActive(false)
+    }
+  }, [state.cardCount])
 
   return (
     <img

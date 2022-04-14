@@ -6,7 +6,6 @@ function Card({ index, meaning: key, comment, interpretations }) {
   const commentRef = React.useRef()
   const state = React.useContext(GlobalStateContext)
   const [showComment, setShowComment] = React.useState(false)
-  console.log(key)
 
   const callback = () => {
     setShowComment(!showComment)

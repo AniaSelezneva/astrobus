@@ -67,47 +67,6 @@ function Spread() {
     setCards(addCards())
   }, [])
 
-  // Show back of the card when it's chosen
-  // React.useEffect(() => {
-  //   switch (amountChosen) {
-  //     case 0:
-  //       break
-  //     case 1:
-  //       table.current.firstElementChild.firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 2:
-  //       table.current.children[1].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 3:
-  //       table.current.children[2].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 4:
-  //       table.current.children[3].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 5:
-  //       table.current.children[4].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 6:
-  //       table.current.children[5].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 7:
-  //       table.current.children[6].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 8:
-  //       table.current.children[7].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 9:
-  //       table.current.children[8].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-  //     case 10:
-  //       table.current.children[9].firstElementChild.className = `${styles.card_front_chosen}`
-  //       break
-
-  //     default:
-  //       break
-  //   }
-  // }, [amountChosen])
-
   return (
     <div className={styles.spread_container}>
       <div
@@ -124,15 +83,15 @@ function Spread() {
 
       <button
         style={
-          state.cardCount > 0
+          state.cardCount >= 10
             ? { visibility: "visible" }
             : { visibility: "hidden" }
         }
         onClick={() => {
           dispatch(remove_spread)
+          addNames()
           chooseRandom()
           setCards(addCards())
-          console.log(names)
         }}
       >
         reset
