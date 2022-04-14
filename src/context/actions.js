@@ -111,3 +111,7 @@ export const add_cards = payload => ({
 export const add_cards_flipped = {
   type: "ADD_FLIPPED_CARD",
 }
+
+export const remove_spread = {
+  type: "REMOVE_SPREAD",
+}

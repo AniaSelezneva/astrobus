@@ -43,6 +43,13 @@ const AllCards = () => {
       container.current.style.animationDuration = `1s`
       container.current.style.animationFillMode = `forwards`
       container.current.style.animationDelay = `0.6s`
+    } else if (state.cardCount === 0) {
+      //setCards([])
+      addCards()
+      container.current.style.animationName = `${styles.cardsAppear}`
+      container.current.style.animationDuration = `1s`
+      container.current.style.animationFillMode = `forwards`
+      //container.current.style.animationDelay = `0.6s`
     }
   }, [state.cardCount])
 

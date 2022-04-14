@@ -100,6 +100,13 @@ to {
   flex-direction: column;
   align-items: center;
 
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
  .table {
    width: 90vw;
    height: 80%;
@@ -120,6 +127,7 @@ to {
     transition: transform 1s;
   }
 
+  // + after
   .card_front {
     position: absolute;
     width: 100%;
@@ -128,6 +136,19 @@ to {
     background-size: cover;
     backface-visibility: hidden;
     border: 2px solid black;
+
+    &::after {
+      position: absolute;
+      color: white;
+      left: 0;
+      top:0;
+      right: 0;
+      bottom: 0;
+      font-size: 400%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     
   }
 
@@ -178,8 +199,13 @@ to {
   & > :nth-child(1) {
     grid-column: 2 / span 1;
    grid-row:4 / span 2;
+   position: relative;
    &:hover {
     z-index: 10;
+  }
+  & > .card_front::after {
+    content: '1';
+    height: max-content;
   }
   }
 
@@ -192,39 +218,74 @@ to {
     &:hover {
       z-index: 10;
     }
+    & > .card_front::after {
+      content: '2';
+    }
   }
 
   & >:nth-child(3) {    
     grid-column: 1 / span 1;
     grid-row:4 / span 2;
+
+    & > .card_front::after {
+      content: '3';
+    }
   }
   & >:nth-child(4) {    
     grid-column: 3/ span 1;
     grid-row:4 / span 2;
+
+    & > .card_front::after {
+      content: '4';
+    }
   }
   & >:nth-child(5) {    
     grid-column: 2/ span 1;
     grid-row:2 / span 2;
+
+    & > .card_front::after {
+      content: '5';
+    }
   }
   & >:nth-child(6) {    
     grid-column: 2/ span 1;
     grid-row:6 / span 2;
+
+    & > .card_front::after {
+      content: '6';
+    }
   }
   & >:nth-child(7) {    
     grid-column: 4/ span 1;
     grid-row:7 / span 2;
+
+    & > .card_front::after {
+      content: '7';
+    }
   }
   & >:nth-child(8) {    
     grid-column: 4/ span 1;
     grid-row:5 / span 2;
+
+    & > .card_front::after {
+      content: '8';
+    }
   }
   & >:nth-child(9) {    
     grid-column: 4/ span 1;
     grid-row:3 / span 2;
+
+    & > .card_front::after {
+      content: '9';
+    }
   }
   & >:nth-child(10) {    
     grid-column: 4/ span 1;
     grid-row:1 / span 2;
+
+    & > .card_front::after {
+      content: '10';
+    }
   }
  }
 
@@ -241,10 +302,20 @@ to {
   flex-direction: column;
   gap: 2rem;
   font-size: 140%;
+  align-items: center;
 
-  & > div {
+  & > .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap:1rem;
+    max-width: 600px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  img {
+    height: 300px;
+    align-self: center;
   }
 }

@@ -17,6 +17,8 @@ function Card({ num, fileName }) {
   React.useEffect(() => {
     if (num === state.cardCount) {
       cardFront.current.className = `${styles.card_front_chosen}`
+
+      window.getComputedStyle(card.current, ":after").style = "display: none"
     }
   }, [state.cardCount])
 
@@ -38,7 +40,11 @@ function Card({ num, fileName }) {
   return (
     <div className={styles.spread_card} ref={card} onClick={callback}>
       <div className={styles.card_front} ref={cardFront} />
-      <img src={`/cards/${fileName}.jpg`} className={styles.card_back} />
+      <img
+        src={`/cards/${fileName}.jpg`}
+        className={styles.card_back}
+        alt={`${fileName}`}
+      />
     </div>
   )
 }

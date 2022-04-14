@@ -80,6 +80,8 @@ export const reducer = (state, action) => {
       return { ...state, chosenCards: action.payload }
     case "ADD_FLIPPED_CARD":
       return { ...state, cardsFlipped: state.cardsFlipped + 1 }
+    case "REMOVE_SPREAD":
+      return { ...state, cardCount: 0, chosenCards: [], cardsFlipped: 0 }
 
     default:
       throw new Error()

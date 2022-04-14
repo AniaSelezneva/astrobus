@@ -5,7 +5,7 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../../context/GlobalContextProvider"
-import { add_cards } from "../../../../context/actions.js"
+import { add_cards, remove_spread } from "../../../../context/actions.js"
 
 function getRandomInt(min, max) {
   min = Math.ceil(min)
@@ -16,23 +16,26 @@ function getRandomInt(min, max) {
 function Spread() {
   const table = React.useRef()
   const [cards, setCards] = React.useState([])
-  const names = [] // names of files
+  const [names, setNames] = React.useState([]) // names of files
   const chosenCards = []
   const dispatch = React.useContext(GlobalDispatchContext)
   const state = React.useContext(GlobalStateContext)
 
   const addNames = () => {
+    const result = []
     // Add Major
     for (let i = 0; i < 22; i++) {
-      names.push(`Major${i.toString().padStart(2, "0")}`)
+      result.push(`Major${i.toString().padStart(2, "0")}`)
     }
     // Add Coins, Cups, Swords, Wands
     for (let i = 1; i < 15; i++) {
-      names.push(`Coins${i.toString().padStart(2, "0")}`)
-      names.push(`Cups${i.toString().padStart(2, "0")}`)
-      names.push(`Swords${i.toString().padStart(2, "0")}`)
-      names.push(`Wands${i.toString().padStart(2, "0")}`)
+      result.push(`Coins${i.toString().padStart(2, "0")}`)
+      result.push(`Cups${i.toString().padStart(2, "0")}`)
+      result.push(`Swords${i.toString().padStart(2, "0")}`)
+      result.push(`Wands${i.toString().padStart(2, "0")}`)
     }
+
+    setNames(result)
   }
 
   const chooseRandom = () => {
@@ -107,11 +110,34 @@ function Spread() {
 
   return (
     <div className={styles.spread_container}>
-      {state.cardCount < 10 ? (
+      <div
+        className={styles.info}
+        style={
+          state.cardCount < 10
+            ? { visibility: "visible" }
+            : { visibility: "hidden" }
+        }
+      >
+        <p>Think of a question to ask</p>
         <p>Choose {10 - state.cardCount} cards</p>
-      ) : (
-        <div />
-      )}
+      </div>
+
+      <button
+        style={
+          state.cardCount > 9
+            ? { visibility: "visible" }
+            : { visibility: "hidden" }
+        }
+        onClick={() => {
+          dispatch(remove_spread)
+          addNames()
+          chooseRandom()
+          setCards(addCards())
+        }}
+      >
+        reset
+      </button>
+
       <div className={styles.table} ref={table}>
         {cards}
       </div>
