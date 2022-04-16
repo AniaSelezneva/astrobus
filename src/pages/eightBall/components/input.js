@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useRef } from "react"
+import * as styles from "../styles.module.scss"
 
 function Input({ setQuestionAsked }) {
   const [question, setQuestion] = useState("")
@@ -8,12 +9,12 @@ function Input({ setQuestionAsked }) {
 
   const url = process.env.GATSBY_SUBSCRIBE_URL
 
-  const sendQuestionToServer = () =>
+  const sendQuestionToServer = question =>
     fetch(`${url}ask`, {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({
-        question: savedQuestion,
+        question,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +23,7 @@ function Input({ setQuestionAsked }) {
     })
 
   return (
-    <form>
+    <form className={styles.form}>
       <div>
         <label htmlFor="name">Your YES/NO question: </label>
         <input
@@ -46,7 +47,9 @@ function Input({ setQuestionAsked }) {
               setSavedQuestion(question)
               setQuestion("")
               try {
-                await sendQuestionToServer()
+                console.log(savedQuestion)
+                await sendQuestionToServer(savedQuestion)
+                console.log("question sent")
               } catch (error) {
                 console.log(error)
               }

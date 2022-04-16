@@ -99,6 +99,7 @@ to {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 4rem;
   }
 
  .table {
@@ -297,6 +298,7 @@ to {
   gap: 2rem;
   font-size: 140%;
   align-items: center;
+  word-break: break-all;
 
   & > .container {
     display: flex;
@@ -306,6 +308,19 @@ to {
 
   h3 {
     text-align: center;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      bottom: 0;
+      margin: 6px;
+    }
   }
 
   img {

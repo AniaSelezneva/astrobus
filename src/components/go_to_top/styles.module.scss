@@ -1,9 +1,24 @@
+$color: white;
+
 #wait_btn {
   position: fixed;
   bottom: 0;
   z-index: 200;
   right: 0;
-  margin: 1rem;
+  //margin: 1rem;
+
+  border: solid $color;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  bottom: 0;
+  margin: 6px;
+
+  & > p {
+    transform: rotate(90deg);
+    color: $color;
+  }
 }
 
 @keyframes fadein {

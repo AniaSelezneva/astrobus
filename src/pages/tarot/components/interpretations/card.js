@@ -27,7 +27,8 @@ function Card({ index, meaning: key, comment, interpretations }) {
       />
       <div>
         <h3 onClick={callback}>
-          {key} {"\u23F7"}
+          {key}
+          {/* {"\u23F7"} */}
         </h3>
         <small ref={commentRef}>{comment}</small>
         {interpretations &&

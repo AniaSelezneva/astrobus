@@ -24,6 +24,7 @@ $background_color: #4bbbbcff;
     user-select: none;
     font-family: "Space Mono", monospace;
     color: whitesmoke;
+    margin-top: 10rem;
 
     // padding: 5rem;
     // background: yellow;
@@ -62,4 +63,28 @@ $background_color: #4bbbbcff;
   justify-content: center;
   align-items: center;
   font-size: 300%;
+}
+
+// FORM
+.form {
+  // position: absolute;
+  //   top: 0;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  button {
+    width: max-content;
+    padding: 0.5rem;
+  }
+
+  input {
+    width: 20rem;
+    max-width: 90vw;
+    padding: 0.5rem;
+  }
 }

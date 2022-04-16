@@ -32,13 +32,13 @@ function Go_to_top() {
 
   return (
     <div>
-      <button
+      <div
         id={styles.wait_btn}
         ref={buttonRef}
         onClick={() => window.scrollTo(0, 0)}
       >
-        up
-      </button>
+        <p>up</p>
+      </div>
     </div>
   )
 }
