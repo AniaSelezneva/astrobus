@@ -21,7 +21,7 @@ $background_color: #4bbbbcff;
   max-width: 100vw;
   z-index: 10;
   animation: cardsAppear 1s forwards;
-
+ 
 
 }
 
@@ -81,7 +81,7 @@ to {
 
 // ********************* SPREAD
 .spread_container {
-  height: 100vh;
+  //height: 100vh;
   width: 100%;
   background: pink;
   position: relative;
@@ -100,6 +100,7 @@ to {
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
+    gap: 1rem;
   }
 
  .table {
@@ -111,7 +112,7 @@ to {
   grid-template-rows: repeat(8, minmax(auto, 1fr));
   gap: 1rem;
   max-width: 600px;
-  max-height: 80%;
+  min-height: 770px;
 
   .spread_card {
     width: 100%;
@@ -299,6 +300,7 @@ to {
   font-size: 140%;
   align-items: center;
   word-break: break-all;
+  padding-top: 3rem;
 
   & > .container {
     display: flex;

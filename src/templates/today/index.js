@@ -26,13 +26,13 @@ const Today = ({ pageContext }) => {
           <p>Your color today is {pageContext[sign].color.toLowerCase()}</p>
         </div>
         <div className={styles.info}>
-          <div className={styles.additionalInfo}>
+          <ul className={styles.additionalInfo}>
             <strong> ({pageContext[sign].date_range})</strong>{" "}
-            <p>Your compatibility is: {pageContext[sign].compatibility}</p>
-            <p>Your lucky number is: {pageContext[sign].lucky_number}</p>
-            <p>Your lucky time is: {pageContext[sign].lucky_time}</p>
-            <p>Your mood is: {pageContext[sign].mood}</p>
-          </div>
+            <li>Your compatibility is: {pageContext[sign].compatibility}</li>
+            <li>Your lucky number is: {pageContext[sign].lucky_number}</li>
+            <li>Your lucky time is: {pageContext[sign].lucky_time}</li>
+            <li>Your mood is: {pageContext[sign].mood}</li>
+          </ul>
           <p className={styles.mainText}>{pageContext[sign].description}</p>
         </div>
       </article>

@@ -29,6 +29,8 @@ $side_color: rgb(183, 47, 74);
   max-width: 800px;
   gap: 1rem;
 
+
+
   // zodiac sign
   h3 {
     grid-column: 2 / 4;
@@ -59,7 +61,7 @@ $side_color: rgb(183, 47, 74);
 
   p {
     font-size: 150%;
-    color: white;
+    
   }
   .color {
     font-size: 0.5rem;
@@ -109,6 +111,24 @@ $side_color: rgb(183, 47, 74);
     display: flex;
     flex-direction: column;
     flex: 2 1;
+   
+
+    li {
+       list-style: initial;
+       &::marker {
+         color: $side_color;
+       } 
+      // &::before {
+      //   content: "• ";
+      //   color: red; /* or whatever color you prefer */
+      // }
+
+      
+    }
+    
+    // li::marker {
+    //   color: red
+    // }
 
     & > :nth-child(2) {
       margin-top: auto;

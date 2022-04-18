@@ -69,33 +69,34 @@ function Spread() {
 
   return (
     <div className={styles.spread_container}>
-      <div
-        className={styles.info}
-        style={
-          state.cardCount < 10
-            ? { visibility: "visible" }
-            : { visibility: "hidden" }
-        }
-      >
-        <p>Think of a question to ask</p>
-        <p>Choose {10 - state.cardCount} cards</p>
-      </div>
-
-      <button
-        style={
-          state.cardCount >= 10
-            ? { visibility: "visible" }
-            : { visibility: "hidden" }
-        }
-        onClick={() => {
-          dispatch(remove_spread)
-          addNames()
-          chooseRandom()
-          setCards(addCards())
-        }}
-      >
-        reset
-      </button>
+      {state.cardCount < 10 ? (
+        <div className={styles.info}>
+          <p>Think of a question to ask</p>
+          <p>Choose {10 - state.cardCount} cards</p>
+        </div>
+      ) : (
+        <div className={styles.info}>
+          <button
+            onClick={() => {
+              dispatch(remove_spread)
+              addNames()
+              chooseRandom()
+              setCards(addCards())
+            }}
+          >
+            reset
+          </button>
+          <p
+            style={
+              state.cardsFlipped < 10
+                ? { visibility: "visible" }
+                : { visibility: "hidden" }
+            }
+          >
+            Flip the cards
+          </p>
+        </div>
+      )}
 
       <div className={styles.table} ref={table}>
         {cards}

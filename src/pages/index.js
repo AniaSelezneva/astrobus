@@ -1,8 +1,8 @@
 import * as React from "react"
-import * as styles from "./styles.module.scss"
+import "./styles.scss"
 
 const IndexPage = () => {
-  return <div className={styles.container}></div>
+  return <div className="container"></div>
 }
 
 export default IndexPage
