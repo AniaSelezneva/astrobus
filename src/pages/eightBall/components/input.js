@@ -47,9 +47,7 @@ function Input({ setQuestionAsked }) {
               setSavedQuestion(question)
               setQuestion("")
               try {
-                console.log(savedQuestion)
-                await sendQuestionToServer(savedQuestion)
-                console.log("question sent")
+                await sendQuestionToServer(question)
               } catch (error) {
                 console.log(error)
               }
