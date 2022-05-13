@@ -23,7 +23,7 @@ function Card({ index, meaning: key, comment, interpretations }) {
     <div className={styles.container}>
       <img
         src={`/cards/${state.chosenCards[index]}.jpg`}
-        alt={`${state.chosenCards[key]}`}
+        alt={`${state.chosenCards[index]}`}
       />
       <div>
         <h3 onClick={callback}>

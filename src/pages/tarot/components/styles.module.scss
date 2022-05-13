@@ -306,6 +306,7 @@ to {
     display: flex;
     gap:1rem;
     max-width: 600px;
+    flex-wrap: wrap;
   }
 
   h3 {
@@ -327,6 +328,8 @@ to {
 
   img {
     height: 300px;
+    width: auto;
     align-self: center;
+    max-width: 70vw;
   }
 }

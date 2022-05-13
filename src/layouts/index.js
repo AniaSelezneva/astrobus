@@ -35,6 +35,9 @@ const Layout = ({ children }) => {
         <nav>
           <ul>
             <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
               <Link to="/today">Horoscope today</Link>
             </li>
             <li>
