@@ -5,11 +5,23 @@ import { Link } from "gatsby"
 const IndexPage = () => {
   return (
     <div className="container">
-      <Link to="/today">Daily horoscope</Link>
-      <Link to="/week">Weekly horoscope</Link>
-      <Link to="/marriageMatch">Marriage match</Link>
-      <Link to="/eightBall">Magic eight ball</Link>
-      <Link to="/tarot">Tarot reading</Link>
+      <ul>
+        <li>
+          <Link to="/today">Daily horoscope</Link>
+        </li>
+        <li>
+          <Link to="/week">Weekly horoscope</Link>
+        </li>
+        <li>
+          <Link to="/marriageMatch">Marriage match</Link>
+        </li>
+        <li>
+          <Link to="/eightBall">Magic eight ball</Link>
+        </li>
+        <li>
+          <Link to="/tarot">Tarot reading</Link>
+        </li>
+      </ul>
     </div>
   )
 }

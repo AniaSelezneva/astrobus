@@ -20,7 +20,6 @@ $err_color: red;
     padding-bottom: 2rem;
   }
 
-  
   // First and second person in the form.
   .person {
     display: flex;
@@ -75,6 +74,10 @@ $err_color: red;
   width: 100%;
   justify-content: space-around;
   display: flex;
+
+  button {
+    color: white;
+  }
 }
 
 .result {
