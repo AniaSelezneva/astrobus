@@ -127,9 +127,13 @@ $err_color: red;
   display: flex;
   align-items: center;
 
-  input {
-    height: max-content;
-    padding: 1rem;
+  button {
+    color: white;
+
+    &:disabled {
+      filter: grayscale(1);
+      cursor: initial;
+    }
   }
 }
 

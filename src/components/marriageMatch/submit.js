@@ -75,9 +75,8 @@ const Submit = ({ setError, setResult, setLoading, loading }) => {
   }
 
   return (
-    <input
+    <button
       type="submit"
-      value="Submit!"
       onClick={handleClick}
       disabled={
         state.first.coord &&
@@ -88,7 +87,9 @@ const Submit = ({ setError, setResult, setLoading, loading }) => {
           ? false
           : true
       }
-    />
+    >
+      Submit!
+    </button>
   )
 }
 
