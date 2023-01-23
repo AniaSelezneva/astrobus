@@ -9,9 +9,9 @@ const IndexPage = () => {
         <li>
           <Link to="/today">Daily horoscope</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/week">Weekly horoscope</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/marriageMatch">Marriage match</Link>
         </li>

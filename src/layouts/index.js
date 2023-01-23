@@ -40,9 +40,9 @@ const Layout = ({ children }) => {
             <li>
               <Link to="/today">Horoscope today</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/week">Weekly horoscope</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/marriageMatch">Marriage matching</Link>
             </li>
